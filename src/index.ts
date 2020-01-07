@@ -1,10 +1,10 @@
+import { CsvFileReader } from './CsvFileReader';
 import { MatchReader } from './MatchReader';
 import { MatchResult } from './MatchResult';
 
 // import fs from 'fs';
 
-const reader = new MatchReader('football.csv');
-reader.read();
+// const reader = new MatchReader('football.csv
 
 // console.log(reader.data);
 
@@ -23,9 +23,18 @@ reader.read();
 //   return MatchResult.AwayWin;
 // };
 
+// Create an obj that satisfies the 'DataReader' interface
+
+const csvFileReader = new CsvFileReader('football.csv');
+
+// Create an instance of MatchReader and pass in someting satisfying
+// the "DataReader" interface
+const matchReader = new MatchReader(csvFileReader);
+matchReader.load();
+
 let manUnitedWins = 0;
 
-for (let match of reader.data) {
+for (let match of matchReader.matches) {
   if (match[1] === 'Man United' && match[5] === MatchResult.HomeWin) {
     manUnitedWins++;
   } else if (match[2] === 'Man United' && match[5] === MatchResult.AwayWin) {
