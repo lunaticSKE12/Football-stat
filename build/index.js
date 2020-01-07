@@ -13,13 +13,16 @@ var matchs = fs_1.default
     return row.split(',');
 });
 // console.log(matchs);
+var homeWin = 'H';
+var awayWin = 'A';
+var draw = 'D';
 var manUnitedWins = 0;
 for (var _i = 0, matchs_1 = matchs; _i < matchs_1.length; _i++) {
     var match = matchs_1[_i];
-    if (match[1] === 'Man United' && match[5] === 'H') {
+    if (match[1] === 'Man United' && match[5] === homeWin) {
         manUnitedWins++;
     }
-    else if (match[2] === 'Man United' && match[5] === 'A') {
+    else if (match[2] === 'Man United' && match[5] === awayWin) {
         manUnitedWins++;
     }
 }

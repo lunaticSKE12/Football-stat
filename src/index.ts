@@ -11,12 +11,16 @@ const matchs = fs
 
 // console.log(matchs);
 
+const homeWin = 'H';
+const awayWin = 'A';
+const draw = 'D';
+
 let manUnitedWins = 0;
 
 for (let match of matchs) {
-  if (match[1] === 'Man United' && match[5] === 'H') {
+  if (match[1] === 'Man United' && match[5] === homeWin) {
     manUnitedWins++;
-  } else if (match[2] === 'Man United' && match[5] === 'A') {
+  } else if (match[2] === 'Man United' && match[5] === awayWin) {
     manUnitedWins++;
   }
 }
