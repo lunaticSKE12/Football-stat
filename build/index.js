@@ -1,17 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var fs_1 = __importDefault(require("fs"));
-var matchs = fs_1.default
-    .readFileSync('football.csv', {
-    encoding: 'utf-8'
-})
-    .split('\n')
-    .map(function (row) {
-    return row.split(',');
-});
+var CsvFileReader_1 = require("./CsvFileReader");
+// import fs from 'fs';
+var reader = new CsvFileReader_1.CsvFileReader('football.csv');
+reader.read();
 // console.log(matchs);
 // const homeWin = 'H';
 // const awayWin = 'A';
@@ -29,8 +21,8 @@ var MatchResult;
 //   return MatchResult.AwayWin;
 // };
 var manUnitedWins = 0;
-for (var _i = 0, matchs_1 = matchs; _i < matchs_1.length; _i++) {
-    var match = matchs_1[_i];
+for (var _i = 0, _a = reader.data; _i < _a.length; _i++) {
+    var match = _a[_i];
     if (match[1] === 'Man United' && match[5] === MatchResult.HomeWin) {
         manUnitedWins++;
     }
