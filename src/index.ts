@@ -1,20 +1,20 @@
+import { MatchResult } from './MatchResult';
 import { CsvFileReader } from './CsvFileReader';
+
 // import fs from 'fs';
 
 const reader = new CsvFileReader('football.csv');
 reader.read();
 
+// console.log(reader.data);
+
+// const dateOfFirstMatch = reader.data[0][0];
+
 // console.log(matchs);
 
 // const homeWin = 'H';
-// const awayWin = 'A';
+// const awayWin = 'A';d
 // const draw = 'D';
-
-enum MatchResult {
-  HomeWin = 'H',
-  AwayWin = 'A',
-  Draw = 'D'
-}
 
 // const printMatchResult = (): MatchResult => {
 //   if (matchs[5] === 'H') {
