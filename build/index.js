@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var HtmlReport_1 = require("./reportTarget/HtmlReport");
 var Summary_1 = require("./Summary");
 var WinAnalysis_1 = require("./anaalyzer/WinAnalysis");
-var ConsoleReport_1 = require("./reportTarget/ConsoleReport");
 var CsvFileReader_1 = require("./CsvFileReader");
 var MatchReader_1 = require("./MatchReader");
 // import fs from 'fs';
@@ -25,5 +25,5 @@ var csvFileReader = new CsvFileReader_1.CsvFileReader('football.csv');
 // the "DataReader" interface
 var matchReader = new MatchReader_1.MatchReader(csvFileReader);
 matchReader.load();
-var summary = new Summary_1.Summary(new WinAnalysis_1.WinAnalysis('Man United'), new ConsoleReport_1.ConsoleReport());
+var summary = new Summary_1.Summary(new WinAnalysis_1.WinAnalysis('Man United'), new HtmlReport_1.HtmlReport());
 summary.buildAndPrintReport(matchReader.matches);
