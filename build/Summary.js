@@ -1,10 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var HtmlReport_1 = require("./reportTarget/HtmlReport");
+var WinAnalysis_1 = require("./anaalyzer/WinAnalysis");
 var Summary = /** @class */ (function () {
     function Summary(analyzer, outputTarget) {
         this.analyzer = analyzer;
         this.outputTarget = outputTarget;
     }
+    // static printHello() {
+    //   console.log('hi');
+    // }
+    Summary.winAnalysisWithHtmlReport = function (team) {
+        return new Summary(new WinAnalysis_1.WinAnalysis(team), new HtmlReport_1.HtmlReport());
+    };
     Summary.prototype.buildAndPrintReport = function (matches) {
         var output = this.analyzer.run(matches);
         this.outputTarget.print(output);
@@ -12,4 +20,4 @@ var Summary = /** @class */ (function () {
     return Summary;
 }());
 exports.Summary = Summary;
-// new Summary(new WinAnalysis(), new ConsoleReport())
+// Summary.printHello();
