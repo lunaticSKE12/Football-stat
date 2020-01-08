@@ -12,7 +12,8 @@ var WinAnalysis = /** @class */ (function () {
             if (match[1] === 'Man United' && match[5] === MatchResult_1.MatchResult.HomeWin) {
                 wins++;
             }
-            else if (match[2] === 'Man United' && match[5] === AwayWin) {
+            else if (match[2] === 'Man United' &&
+                match[5] === MatchResult_1.MatchResult.AwayWin) {
                 wins++;
             }
         }
