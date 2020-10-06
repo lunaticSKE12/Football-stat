@@ -7,6 +7,7 @@ export class WinAnalysis implements Analyzer {
 
   run(matches: MatchData[]): string {
     let wins = 0;
+    let wins1 = 0;
 
     for (let match of matches) {
       if (match[1] === "Bournemouth" && match[5] === MatchResult.HomeWin) {
@@ -16,6 +17,14 @@ export class WinAnalysis implements Analyzer {
         match[5] === MatchResult.AwayWin
       ) {
         wins++;
+      }
+    }
+
+    for (let match of matches) {
+      if (match[1] === "Liverpool" && match[5] === MatchResult.HomeWin) {
+        wins1++;
+      } else if (match[2] === "Liverpool" && match[5] === MatchResult.AwayWin) {
+        wins1++;
       }
     }
 
