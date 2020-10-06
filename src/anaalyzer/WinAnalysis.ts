@@ -3,7 +3,7 @@ import { MatchData } from "./../MatchData";
 import { Analyzer } from "./../Summary";
 
 export class WinAnalysis implements Analyzer {
-  constructor(public teamName: string) {}
+  constructor(public teamName: string, public teamName2: string) {}
 
   run(matches: MatchData[]): string {
     let wins = 0;
@@ -28,6 +28,6 @@ export class WinAnalysis implements Analyzer {
       }
     }
 
-    return `Team ${this.teamName} won ${wins} games`;
+    return `Team ${this.teamName} won ${wins} games, Team ${this.teamName2} won ${wins1} games `;
   }
 }
