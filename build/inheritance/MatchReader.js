@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var utils_1 = require("./utils");
+var utils_1 = require("../utils");
 var CsvFileReader_1 = require("./CsvFileReader");
 var MatchReader = /** @class */ (function (_super) {
     __extends(MatchReader, _super);
@@ -28,7 +28,7 @@ var MatchReader = /** @class */ (function (_super) {
             parseInt(row[3]),
             parseInt(row[4]),
             row[5],
-            row[6]
+            row[6],
         ];
     };
     return MatchReader;

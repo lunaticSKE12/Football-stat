@@ -1,5 +1,5 @@
-import { MatchResult } from './MatchResult';
-import { dateStringToDate } from './utils';
+import { MatchResult } from '../MatchResult';
+import { dateStringToDate } from '../utils';
 import { CsvFileReader } from './CsvFileReader';
 
 type MatchData = [Date, string, string, number, number, MatchResult, string];
@@ -13,7 +13,7 @@ export class MatchReader extends CsvFileReader<MatchData> {
       parseInt(row[3]),
       parseInt(row[4]),
       row[5] as MatchResult, // 'H' ,'A', 'D'
-      row[6]
+      row[6],
     ];
   }
 }
