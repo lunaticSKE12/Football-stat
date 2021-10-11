@@ -9,3 +9,5 @@ export type MatchData = [
   MatchResult,
   string
 ];
+
+export type Team = [Date, string, string, number, number];
