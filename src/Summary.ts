@@ -11,9 +11,9 @@ export interface OutputTarget {
 }
 
 export class Summary {
-  // static printHello() {
-  //   console.log('hi');
-  // }
+  static printHello() {
+    console.log('summary');
+  }
 
   static winAnalysisWithHtmlReport(team: string): Summary {
     return new Summary(new WinAnalysis(team), new HtmlReport());
@@ -21,6 +21,9 @@ export class Summary {
   constructor(public analyzer: Analyzer, public outputTarget: OutputTarget) {}
   buildAndPrintReport(matches: MatchData[]): void {
     const output = this.analyzer.run(matches);
+    const team = this.analyzer.run(team);
+
+    this.outputTarget.print(team);
     this.outputTarget.print(output);
   }
 }
